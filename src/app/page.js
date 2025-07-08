@@ -166,13 +166,14 @@ export default function Home() {
               </p>
 
               <h2 className="text-center lg:text-left text-2xl sm:text-3xl xl:text-8xl font-bold mb-4">
-                Hi, I'm <span className="text-[#FF5E00]">Akash</span> Janoriya
+                Hi, I&apos;m <span className="text-[#FF5E00]">Akash</span>{" "}
+                Janoriya
               </h2>
 
               <p className="text-center md:text-left">
                 I craft user-focused digital experiences through clean code and
-                captivating design. Let's build your brand, website, or mobile
-                app — professionally and passionately.
+                captivating design. Let&apos;s build your brand, website, or
+                mobile app — professionally and passionately.
               </p>
 
               <ContentTransition
@@ -185,7 +186,7 @@ export default function Home() {
                   href="#about"
                   className="bg-[#FF5E00] text-center text-white flex items-center gap-2 py-3 px-6 lg:px-10 capitalize rounded-sm shadow-lg hover:scale-105 hover:underline transition-transform"
                 >
-                  Let's Start <FaLongArrowAltRight />
+                  Let&apos;s Start <FaLongArrowAltRight />
                 </a>
               </ContentTransition>
             </ContentTransition>
