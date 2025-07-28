@@ -314,8 +314,8 @@ export default function Home() {
                 <div className="w-12 h-px bg-orange-500" />
               </div>
               <h2 className="text-xl sm:text-3xl md:text-4xl font-bold mb-8">
-                Ready to bring your online vision to life? Here's how we design
-                and build websites that truly stand out:
+                Ready to bring your online vision to life? Here&apos;s how we
+                design and build websites that truly stand out:
               </h2>
             </div>
           </ContentTransition>

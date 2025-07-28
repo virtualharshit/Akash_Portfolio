@@ -218,8 +218,8 @@ export default function Home() {
               </h2>
               <p className="text-center md:text-left text-lg mb-4">About Me</p>
               <p className="text-center md:text-left mb-2">
-                I'm Akash Janoriya, the founder of Technisum Web Solutions, and
-                I'm a seasoned expert in crafting visually stunning and
+                I&apos;m Akash Janoriya, the founder of Technisum Web Solutions,
+                and I&apos;m a seasoned expert in crafting visually stunning and
                 high-performing digital solutions. I combine a passion for
                 innovation with a robust skill set spanning web design,
                 development, and graphic design.
@@ -328,9 +328,9 @@ export default function Home() {
             </div>
 
             <div className="w-full p-4 md:p-6 lg:text-lg ">
-              My approach : I'm Akash Janoriya, founder of Technisum Web
+              My approach : I&apos;m Akash Janoriya, founder of Technisum Web
               Solutions. I craft impactful websites that drive results, ensuring
-              you're visible and supported, every step of the way.
+              you&apos;re visible and supported, every step of the way.
             </div>
           </div>
         </section>
