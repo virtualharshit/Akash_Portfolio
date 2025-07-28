@@ -13,6 +13,9 @@ import LetsWorkTogether from "@/components/LetsWorkTogether";
 import Footer from "@/components/Footer";
 import InfiniteCompaniesScroll from "@/components/InfiniteCompaniesScroll";
 import Testimonials from "@/components/Testimonials";
+import { FaArrowRightLong } from "react-icons/fa6";
+import { IoMailOutline } from "react-icons/io5";
+import { CiLocationOn } from "react-icons/ci";
 
 const caveat = Caveat({
   subsets: ["latin"],
@@ -21,34 +24,16 @@ const caveat = Caveat({
 
 const members = [
   {
-    title: "Brand Identity & Motion Design",
-    category: "Product Design",
-    image: "./member1.png",
+    image: "./about1.png",
   },
   {
-    title: "Brand Identity & Motion Design",
-    image: "./member2.png",
-    category: "Product Design",
+    image: "./about2.png",
   },
   {
-    title: "Brand Identity & Motion Design",
-    image: "./member3.png",
-    category: "Product Design",
+    image: "./about3.png",
   },
   {
-    title: "Brand Identity & Motion Design",
-    image: "./member4.png",
-    category: "Product Design",
-  },
-  {
-    title: "Brand Identity & Motion Design",
-    image: "./member5.png",
-    category: "Product Design",
-  },
-  {
-    title: "Brand Identity & Motion Design",
-    image: "./member6.png",
-    category: "Product Design",
+    image: "./about4.png",
   },
 ];
 
@@ -110,88 +95,382 @@ const processes = [
   },
 ];
 
+const processes1 = [
+  {
+    points: [
+      "Outdated Design: Their current website looks old and fails to attract new customers.",
+      "Confused Vision: They struggle to define what their website should truly achieve for their business.",
+      "Poor Mobile Experience: Their site doesn't work well on phones, losing potential audience engagement.",
+    ],
+  },
+  {
+    points: [
+      "Uncertain Costs: They worry about unexpected expenses and exceeding their budget.",
+      "Low Online Visibility: Their fantastic website isn't being found by anyone on search engines.",
+      "Lack of Support: They fear being left without help for updates after the site is launched.",
+    ],
+  },
+];
+
+const expertise = [
+  {
+    title: "Design & Development",
+    desc: "Creative Interfaces and Functional Code Tailored for Seamless Digital Experiences.",
+    skills: [
+      "UI/UX Design",
+      "Frontend Development",
+      "Responsive Design",
+      "Design Systems",
+    ],
+  },
+
+  {
+    title: "Product Prototyping",
+    desc: "Turning Ideas into Interactive Prototypes That Showcase Real User Journeys.",
+    skills: [
+      "Wireframing Tools",
+      "Interactive Mockups",
+      "Figma & XD",
+      "User Flows",
+    ],
+  },
+  {
+    title: "Web & App Optimization",
+    desc: "Speed, SEO, and Usability Tweaks That Drive Performance and Retention.",
+    skills: [
+      "Mobile Optimization",
+      "Page Speed Tuning",
+      "SEO-Friendly Code",
+      "Cross-Browser Testing",
+    ],
+  },
+];
+
+const technicalskills = [
+  {
+    title: "Design",
+    skills: [
+      {
+        title: "UI/UX Design",
+        level: 95,
+      },
+      {
+        title: "Interaction Design (IxD)",
+        level: 95,
+      },
+      {
+        title: "User Research & Usability Testing",
+        level: 95,
+      },
+      {
+        title: "Prototyping & Wireframing",
+        level: 95,
+      },
+    ],
+  },
+
+  {
+    title: "Development",
+    skills: [
+      {
+        title: "React/Next.js",
+        level: 95,
+      },
+      {
+        title: "TypeScript",
+        level: 95,
+      },
+      {
+        title: "Node.js",
+        level: 95,
+      },
+      {
+        title: "PostgreSQL",
+        level: 95,
+      },
+    ],
+  },
+];
+
 export default function Home() {
   return (
     <div className="min-h-screen bg-[#141410]font-[family-name:var(--font-geist-sans)]">
       <Navbar />
 
       <main className="">
-        <div className="mx-auto container text-center flex flex-col items-center gap-8 md:gap-12 pb-12 md:pb-16 px-4">
-          <div className="relative w-full max-w-7xl">
-            <div className="m-auto bg-[#FF5E00] rounded-lg overflow-hidden">
+        <header className="relative">
+          {/* Background image */}
+          {/* <img
+            src="./headerbg.png"
+            className="absolute h-full w-full object-cover z-[-1]"
+            alt="Header background"
+          /> */}
+
+          <div className="lg:min-h-[80vh] grid lg:grid-cols-2 items-center w-[90%] xl:w-[80%] mx-auto relative py-8">
+            {/* Left content */}
+            <ContentTransition
+              type="leftToRight"
+              duration={0.8}
+              className="w-[90%] m-auto lg:w-auto flex flex-col justify-center items-center lg:items-start text-sm lg:text-base"
+            >
+              <h2 className="text-center lg:text-left text-2xl sm:text-3xl xl:text-5xl font-bold mb-4">
+                Creative Director
+              </h2>
+              <p className="text-center md:text-left text-lg mb-4">About Me</p>
+              <p className="text-center md:text-left mb-2">
+                I'm Akash Janoriya, the founder of Technisum Web Solutions, and
+                I'm a seasoned expert in crafting visually stunning and
+                high-performing digital solutions. I combine a passion for
+                innovation with a robust skill set spanning web design,
+                development, and graphic design.
+              </p>
+              <p className="text-center md:text-left mb-2">
+                Whether you need a responsive website that captivates your
+                audience, a dynamic web application that streamlines your
+                operations, or impactful brand assets that elevate your
+                identity, I bring a user-centric approach to every project. I
+                leverage a comprehensive toolkit including HTML, CSS,
+                JavaScript, Bootstrap, WordPress, React.js, and Node.js to build
+                solutions that not only look great but also drive tangible
+                results for your business.
+              </p>{" "}
+              <p className="text-center md:text-left">
+                Beyond coding, I excel at creating compelling visual stories.
+                With expertise in tools like Photoshop, Illustrator, Corel Draw,
+                and Adobe XD, I ensure your brand stands out with impactful
+                logos, brochures, and other essential graphics.
+              </p>
+            </ContentTransition>
+
+            {/* Right image */}
+            <ContentTransition type="fadeIn" duration={1} delay={0.3}>
+              <img
+                src="./headerright.png"
+                className="hidden opacity-20 lg:block w-[53%] object-cover absolute right-0 bottom-0"
+                alt="Akash Janoriya"
+              />
+            </ContentTransition>
+          </div>
+        </header>
+
+        {/* Services Showcase */}
+        <section className="px-4 py-12 sm:px-6 sm:py-16 md:p-8 md:py-[6rem]">
+          <div className="w-[90%] md:w-[80%] m-auto relative grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 md:gap-8 mt-6 sm:mt-8 md:mt-12">
+            {members.map((member, index) => (
+              <div
+                key={index}
+                className="flex flex-col justify-center gap-2 sm:gap-3"
+              >
+                <img
+                  src={member.image}
+                  className="w-full h-auto max-h-[300px] sm:max-h-[350px] md:h-[300px] lg:h-[500px] object-cover rounded-lg"
+                  alt={member.name || "Team member"}
+                />
+                {/* Add responsive text/content for member info if needed */}
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Working Process Showcase */}
+        <section className="px-4 py-16 md:py-24 bg-[#1C1C16]">
+          <div className="max-w-6xl mx-auto">
+            <ContentTransition
+              type="fadeInScale"
+              duration={1.5}
+              viewport={{ once: true, margin: "-100px" }}
+            >
+              <div className="flex flex-col items-center gap-4 text-center">
+                <div className="flex items-center justify-center my-6 md:my-8">
+                  <div className="w-8 md:w-12 h-px bg-orange-500" />
+                  <h2
+                    className={`text-orange-500 text-xl md:text-2xl italic mx-3 md:mx-4 whitespace-nowrap ${caveat.className}`}
+                  >
+                    Problems
+                  </h2>
+                  <div className="w-8 md:w-12 h-px bg-orange-500" />
+                </div>
+                <h2 className="text-3xl  md:text-3xl  lg:text-4xl font-bold mb-6 md:mb-8">
+                  How I Fix Your Online Issues
+                </h2>
+              </div>
+            </ContentTransition>
+
+            <div className="w-full p-4 md:p-6 text-lg font-bold">
+              My clients typically come to me with specific challenges that are
+              holding back their digital growth:
+            </div>
+
+            <div className=" relative grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+              {processes1.map((process, index) => (
+                <ContentTransition
+                  key={index}
+                  type="fadeIn"
+                  duration={0.8}
+                  delay={index * 0.2}
+                  viewport={{ once: true, margin: "-100px" }}
+                >
+                  <div className="flex flex-col gap-4 rounded-xl p-4 md:p-6 hover:bg-[#2A2A20] transition-colors duration-300">
+                    <ul className="pl-5 mt-2 space-y-3 md:space-y-4">
+                      {process?.points.map((point, index) => (
+                        <li
+                          key={index}
+                          className="text-sm flex gap-3 items-center md:text-base text-[#FFFFFFAA]"
+                        >
+                          <FaArrowRightLong className="text-[#FF5E00] text-3xl" />
+                          {point}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </ContentTransition>
+              ))}
+            </div>
+
+            <div className="w-full p-4 md:p-6 lg:text-lg ">
+              My approach : I'm Akash Janoriya, founder of Technisum Web
+              Solutions. I craft impactful websites that drive results, ensuring
+              you're visible and supported, every step of the way.
+            </div>
+          </div>
+        </section>
+
+        <div className="text-white">
+          <div className="w-full md:w-[90%] m-auto container mx-auto text-center flex flex-col items-center gap-6 md:gap-12 py-4 md:py-8 px-4 md:px-6">
+            <div className="w-full m-auto rounded-xl">
               <ContentTransition
                 type="fadeIn"
                 duration={1.5}
                 viewport={{ once: true, margin: "-100px" }}
               >
-                <section className="grid grid-cols-1 lg:grid-cols-2 items-center gap-6 lg:gap-8 relative p-6 md:p-8">
-                  {/* Image Section */}
-                  <ContentTransition
-                    type="leftToRight"
-                    duration={1.2}
-                    viewport={{ once: true, margin: "-100px" }}
-                  >
-                    <div className="flex justify-center items-center p-4 md:p-8">
-                      <Image
-                        src="./home_personalinfo.png"
-                        className="h-auto max-h-[280px] md:max-h-[350px] lg:max-h-none w-auto max-w-full"
-                        alt="Creative Director portrait"
-                      />
-                    </div>
-                  </ContentTransition>
-
-                  {/* Content Section */}
+                <section className="grid grid-cols-1 lg:grid-cols-2 items-center gap-4 lg:gap-[5%] relative p-2 md:p-4 py-4 md:py-8 lg:p-8">
                   <ContentTransition
                     type="rightToLeft"
                     duration={1.2}
                     delay={0.2}
                     viewport={{ once: true, margin: "-100px" }}
                   >
-                    <div className="w-full text-left mx-auto flex flex-col justify-center items-center lg:items-start">
-                      <h2 className="text-center lg:text-left text-2xl md:text-3xl xl:text-4xl font-bold mb-4 md:mb-6 leading-tight">
-                        Creative Director
+                    <div className="w-full md:w-[90%] m-auto lg:w-auto flex flex-col justify-center items-center lg:items-start">
+                      <h2 className="text-center lg:text-left text-xl sm:text-2xl md:text-3xl xl:text-4xl/tight font-bold mb-4 md:mb-6">
+                        My Expertise
                       </h2>
 
-                      <h3 className="font-bold text-lg md:text-xl mb-3">
-                        About Me
-                      </h3>
+                      <div className="mt-4 md:mt-6 flex flex-col gap-3 md:gap-4 wrap-break-word">
+                        {expertise.map((obj, i) => (
+                          <div
+                            key={i}
+                            className="flex flex-col gap-3 md:gap-4 border rounded-lg border-[#FFFFFF50] p-3 md:p-4 lg:p-6 text-left"
+                          >
+                            <div className="mt-1 text-base md:text-lg">
+                              {obj.title}
+                            </div>
+                            <p className="text-xs md:text-sm text-[#ffffff50]">
+                              {obj.desc}
+                            </p>
+                            <ul className="flex gap-1 md:gap-2 flex-wrap">
+                              {obj.skills.map((skill, i) => (
+                                <li
+                                  key={i}
+                                  className="bg-[#141410] text-xs md:text-sm p-1 md:p-2 px-2 md:px-4 rounded-lg"
+                                >
+                                  {skill}
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </ContentTransition>
 
-                      <div className="text-center lg:text-left text-sm md:text-base text-white space-y-3 md:space-y-4">
-                        <p>
-                          Brands often struggle to stand out and connect with
-                          their audience in a competitive market. My mission is
-                          to turn ideas into meaningful, visually impactful
-                          stories that leave a lasting impression.
-                        </p>
+                  <ContentTransition
+                    type="leftToRight"
+                    duration={1.2}
+                    viewport={{ once: true, margin: "-100px" }}
+                  >
+                    <div className="hidden lg:flex lg:justify-center items-center mt-6 lg:mt-0">
+                      <img
+                        src="./about_expertise.png"
+                        className="h-auto max-h-[200px] sm:max-h-[250px] md:max-h-[300px] lg:h-auto lg:max-h-none p-4 md:p-8 rounded-3xl overflow-hidden w-full object-contain"
+                        alt="Expertise illustration"
+                      />
+                    </div>
+                  </ContentTransition>
+                </section>
+              </ContentTransition>
+            </div>
+          </div>
+        </div>
 
-                        <p>
-                          With a Bachelor&apos;s in Fashion from Pearl Academy,
-                          a Post-Graduate degree in Visual Design from IIIT
-                          Hyderabad, and an MBA in Marketing, I bring a unique
-                          fusion of creativity, business insight, and strategic
-                          design thinking to every project.
-                        </p>
+        <div className="text-white bg-[#1C1C16] mb-4">
+          <div className="w-full md:w-[90%] m-auto container mx-auto text-center flex flex-col items-center gap-6 md:gap-12 py-6 md:py-8 px-4 md:px-6">
+            <div className="w-full m-auto rounded-xl">
+              <ContentTransition
+                type="fadeIn"
+                duration={1.5}
+                viewport={{ once: true, margin: "-100px" }}
+              >
+                <section className="grid grid-cols-1 lg:grid-cols-2 items-center gap-6 lg:gap-[5%] relative p-2 md:p-4 py-4 md:py-8 lg:p-8">
+                  {/* Images Section - Now visible on all screens but stacked on mobile */}
+                  <ContentTransition
+                    type="leftToRight"
+                    duration={1.2}
+                    viewport={{ once: true, margin: "-100px" }}
+                  >
+                    <div className="hidden lg:flex flex-col justify-center items-center gap-4 md:gap-6 order-1 lg:order-none">
+                      <img
+                        src="./about_technical1.png"
+                        className="h-auto max-h-[180px] sm:max-h-[220px] md:max-h-[350px] lg:h-auto w-full object-contain p-1 md:p-2 rounded-3xl"
+                        alt="Technical skills illustration"
+                      />
+                      <img
+                        src="./about_technical1.png"
+                        className="h-auto max-h-[180px] sm:max-h-[220px] md:max-h-[350px] lg:h-auto w-full object-contain p-1 md:p-2 rounded-3xl"
+                        alt="Technical skills illustration"
+                      />
+                    </div>
+                  </ContentTransition>
 
-                        <p>
-                          For over 5 years, I&apos;ve collaborated with brands
-                          across industries to craft:
-                        </p>
+                  {/* Skills Content Section */}
+                  <ContentTransition
+                    type="rightToLeft"
+                    duration={1.2}
+                    delay={0.2}
+                    viewport={{ once: true, margin: "-100px" }}
+                  >
+                    <div className="w-full md:w-[90%] m-auto lg:w-auto flex flex-col justify-center items-center lg:items-start">
+                      <h2 className="text-center lg:text-left text-xl sm:text-2xl md:text-3xl xl:text-4xl/tight font-bold mb-4 md:mb-6">
+                        Technical Skills
+                      </h2>
 
-                        <ul className="list-disc flex flex-col gap-2 pl-5 mt-2 mb-3">
-                          <li>Memorable brand identities</li>
-                          <li>Intuitive digital experiences</li>
-                          <li>High-converting websites</li>
-                          <li>Visually stunning UI designs</li>
-                        </ul>
+                      <div className="mt-4 md:mt-6 w-full flex flex-col gap-6 md:gap-8 lg:gap-12 wrap-break-word">
+                        {technicalskills.map((obj, i) => (
+                          <div
+                            key={i}
+                            className="w-full flex flex-col gap-3 md:gap-4 rounded-lg text-left"
+                          >
+                            <div className="mt-1 text-base md:text-lg font-medium">
+                              {obj.title}
+                            </div>
 
-                        <p>
-                          From logos and brand kits to fully responsive web
-                          platforms and mobile UI design, I help businesses
-                          speak clearly, look professional, and connect
-                          authentically.
-                        </p>
-
-                        <p>Let&apos;s make your brand unforgettable.</p>
+                            <ul className="w-full flex flex-col gap-4 md:gap-6 flex-wrap">
+                              {obj.skills.map((skill, i) => (
+                                <li
+                                  key={i}
+                                  className="w-full flex flex-col sm:flex-row gap-2 sm:gap-4 text-sm rounded-lg"
+                                >
+                                  <div className="grow flex flex-col gap-1 sm:gap-2">
+                                    <span>{skill.title}</span>
+                                    <div className="border-[2px] sm:border-[3px] rounded border-[#FF5E00] w-full"></div>
+                                  </div>
+                                  <div className="text-right sm:text-left min-w-[40px]">
+                                    {skill.level}%
+                                  </div>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        ))}
                       </div>
                     </div>
                   </ContentTransition>
@@ -201,24 +480,6 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Services Showcase */}
-        <section className="p-8 py-[6rem] mt-6">
-          <div className="w-[90%] m-auto relative grid grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
-            {members.map((member, index) => (
-              <div key={index} className="flex flex-col justify-center gap-2 ">
-                <Image
-                  src={member.image}
-                  className="w-full rounded-lg"
-                  alt=""
-                />
-                <div className="text-xl"> {member.title}</div>
-                <div className="text-sm text-[#FF5E00]">{member.category}</div>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* Working Process Showcase */}
         <section className="px-4 py-16 md:py-24 bg-[#1C1C16]">
           <ContentTransition
             type="fadeInScale"

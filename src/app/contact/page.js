@@ -13,6 +13,7 @@ import LetsWorkTogether from "@/components/LetsWorkTogether";
 import Footer from "@/components/Footer";
 import InfiniteCompaniesScroll from "@/components/InfiniteCompaniesScroll";
 import Testimonials from "@/components/Testimonials";
+import ContactForm from "@/components/ContactForm";
 
 const caveat = Caveat({
   subsets: ["latin"],
@@ -256,6 +257,8 @@ export default function Home() {
             </button>
           </div>
         </section>
+
+        <ContactForm />
       </main>
 
       <Footer />

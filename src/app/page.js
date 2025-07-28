@@ -18,6 +18,7 @@ import { FaInstagram } from "react-icons/fa";
 import { FaFacebook } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import ScrollToTopButton from "@/components/ScrollToTopButton";
+import Services from "@/components/Services";
 
 const caveat = Caveat({
   subsets: ["latin"],
@@ -25,36 +26,40 @@ const caveat = Caveat({
 });
 
 const projects = [
-  {
-    title: "Brand Identity & Motion Design",
-    category: "Product Design",
-    image: "./project1.png",
-  },
-  {
-    title: "Brand Identity & Motion Design",
-    image: "./project1.png",
-    category: "Product Design",
-  },
-  {
-    title: "Brand Identity & Motion Design",
-    image: "./project1.png",
-    category: "Product Design",
-  },
-  {
-    title: "Brand Identity & Motion Design",
-    image: "./project1.png",
-    category: "Product Design",
-  },
-  {
-    title: "Brand Identity & Motion Design",
-    image: "./project1.png",
-    category: "Product Design",
-  },
-  {
-    title: "Brand Identity & Motion Design",
-    image: "./project1.png",
-    category: "Product Design",
-  },
+  [
+    {
+      title: "Brand Identity & Motion Design",
+      category: "Product Design",
+      image: "./portfolio1.png",
+    },
+    {
+      title: "Brand Identity & Motion Design",
+      image: "./portfolio2.png",
+      category: "Product Design",
+    },
+    {
+      title: "Brand Identity & Motion Design",
+      image: "./portfolio3.png",
+      category: "Product Design",
+    },
+  ],
+  [
+    {
+      title: "Brand Identity & Motion Design",
+      category: "Product Design",
+      image: "./portfolio4.png",
+    },
+    {
+      title: "Brand Identity & Motion Design",
+      image: "./portfolio5.png",
+      category: "Product Design",
+    },
+    {
+      title: "Brand Identity & Motion Design",
+      image: "./portfolio6.png",
+      category: "Product Design",
+    },
+  ],
 ];
 
 const services = [
@@ -66,54 +71,52 @@ const services = [
     url: "",
   },
   {
-    title: "Graphic & Illustration Design ",
+    title: "UI/UX Design",
     category: "Design",
-    subtitle: "Creative Graphics and Illustrations That Speak for Your Brand",
-    desc: " I craft visually compelling designs tailored to communicate your brand story effectively. From custom illustrations to striking marketing materials, I ensure every graphic leaves a lasting impression.",
+    subtitle: "Intuitive and Engaging Interfaces for Web and Mobile Apps",
+    desc: "User experience is at the heart of every digital product. I design clean, user-friendly interfaces that keep your audience engaged and make your product easy to navigate and enjoyable to use.",
     url: "",
   },
   {
-    title: "Graphic & Illustration Design ",
+    title: "Web Design & Development",
     category: "Design",
-    subtitle: "Creative Graphics and Illustrations That Speak for Your Brand",
-    desc: " I craft visually compelling designs tailored to communicate your brand story effectively. From custom illustrations to striking marketing materials, I ensure every graphic leaves a lasting impression.",
+    subtitle:
+      "Fully Responsive and High-Performing Websites Built with Modern Tech",
+    desc: " From landing pages to full-scale web platforms, I develop websites that are fast, secure, mobile-friendly, and tailored to meet your business objectives using the latest technologies.",
     url: "",
   },
   {
-    title: "Graphic & Illustration Design ",
+    title: "Mobile App Design",
     category: "Design",
-    subtitle: "Creative Graphics and Illustrations That Speak for Your Brand",
-    desc: " I craft visually compelling designs tailored to communicate your brand story effectively. From custom illustrations to striking marketing materials, I ensure every graphic leaves a lasting impression.",
+    subtitle: "Pixel-Perfect and User-Friendly App Interfaces",
+    desc: "I design mobile applications that are intuitive, consistent, and tailored for both iOS and Android platforms — ensuring your app not only looks great but functions flawlessly.",
     url: "",
   },
 ];
 
 const processes = [
   {
-    title: "Concept",
-    desc: "Nemo enim ipsam voluptatem voluptas sit aspernatur aut odit aut fugit",
+    title: "Discovery & Strategic Blueprint",
     points: [
-      "Reviewing any existing branding",
-      "Target audience and competitors research",
-      "Developing a strategy",
+      "Uncover your unique business goals.",
+      "Pinpoint your perfect audience.",
+      "Map out your website's success.",
     ],
   },
   {
-    title: "Design",
-    desc: "Nemo enim ipsam voluptatem voluptas sit aspernatur aut odit aut fugit",
+    title: "Design & Develop Your Vision",
     points: [
-      "Reviewing any existing branding",
-      "Target audience and competitors research",
-      "Developing a strategy",
+      "Craft captivating visual mockups.",
+      "Build intuitive, responsive layouts.",
+      "Integrate powerful features.",
     ],
   },
   {
-    title: "Webflow",
-    desc: "Nemo enim ipsam voluptatem voluptas sit aspernatur aut odit aut fugit",
+    title: "Refine & Launch Your Online Presence",
     points: [
-      "Reviewing any existing branding",
-      "Target audience and competitors research",
-      "Developing a strategy",
+      "Your valuable feedback is key.",
+      "Perfect with unlimited revisions.",
+      "Launch your stunning website!",
     ],
   },
 ];
@@ -213,7 +216,7 @@ export default function Home() {
             duration={1.5}
             viewport={{ once: true, margin: "-100px" }}
           >
-            <div className="w-1/2 m-auto flex flex-col items-center gap-2 text-center">
+            <div className="md:w-1/2 m-auto flex flex-col items-center gap-2 text-center">
               <div className="flex items-center justify-center my-8">
                 <div className="w-12 h-px bg-orange-500" />
                 <h2
@@ -233,12 +236,25 @@ export default function Home() {
             </div>
           </ContentTransition>
 
-          <div className="w-[90%] m-auto relative grid grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
-            {projects.map((project, index) => (
-              <div key={index} className="flex flex-col justify-center gap-2 ">
-                <img src={project.image} className="w-full rounded-lg" alt="" />
-                <div className="text-sm text-[#FF5E00]">{project.category}</div>
-                <div className="text-xl"> {project.title}</div>
+          <div className="w-[90%] m-auto relative grid  md:grid-cols-2 gap-8 mt-12">
+            {projects.map((projectarr, index) => (
+              <div className="flex flex-col justify-center gap-8" key={index}>
+                {projectarr.map((project, index1) => (
+                  <div
+                    key={index1}
+                    className="flex flex-col justify-center gap-2 "
+                  >
+                    <img
+                      src={project.image}
+                      className="w-full rounded-lg"
+                      alt=""
+                    />
+                    <div className="text-sm text-[#FF5E00]">
+                      {project.category}
+                    </div>
+                    <div className="text-xl"> {project.title}</div>
+                  </div>
+                ))}
               </div>
             ))}
           </div>
@@ -277,41 +293,7 @@ export default function Home() {
             </div>
           </ContentTransition>
 
-          <div className="w-[90%] m-auto relative grid gap-8 mt-12">
-            {services.map((project, index) => (
-              <div
-                key={index}
-                className="grid lg:grid-cols-[5%_40%_40%_10%] justify-center gap-4  border-b py-4 border-[#FFFFFF1A] hover:border-[#FF5E00]"
-              >
-                <div className="text-xl">
-                  {(index + 1).toString().padStart(2, "0")}
-                </div>
-                <div className="flex  justify-between gap-2">
-                  <div>
-                    <div className="text-sm">{project.category}</div>
-                    <div className="text-xl lg:text-3xl mt-2">
-                      {" "}
-                      {project.title}
-                    </div>
-                  </div>
-                  <div className="flex justify-end items-center lg:hidden">
-                    <MdArrowOutward className="bg-[#262625] text-white hover:bg-[#FF5E00] hover:text-black text-lg w-10 h-10 p-2 " />
-                  </div>
-                </div>
-
-                <div>
-                  <div className="text-sm ">{project.subtitle}</div>
-                  <div className="text-sm text-[#FFFFFF80] mt-2">
-                    {" "}
-                    {project.desc}
-                  </div>
-                </div>
-                <div className="hidden lg:flex justify-end items-center">
-                  <MdArrowOutward className="bg-[#262625] text-white hover:bg-[#FF5E00] hover:text-black text-lg w-10 h-10 p-2 " />
-                </div>
-              </div>
-            ))}
-          </div>
+          <Services />
         </section>
 
         {/* Working Process Showcase */}
@@ -331,8 +313,9 @@ export default function Home() {
                 </h2>
                 <div className="w-12 h-px bg-orange-500" />
               </div>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-8">
-                Your Dream Website In Just Few Steps
+              <h2 className="text-xl sm:text-3xl md:text-4xl font-bold mb-8">
+                Ready to bring your online vision to life? Here's how we design
+                and build websites that truly stand out:
               </h2>
             </div>
           </ContentTransition>
@@ -343,11 +326,8 @@ export default function Home() {
                 key={index}
                 className=" border p-6 py-8 rounded-xl border-[#FFFFFF1A] hover:border-[#FF5E00]"
               >
-                <div className="text-3xl">{process.title}</div>
-                <div className="text-sm text-[#FFFFFF80] mt-4">
-                  {" "}
-                  {process.desc}
-                </div>
+                <div className="text-xl lg:text-3xl">{process.title}</div>
+
                 <ul className="list-disc pl-5 mt-2">
                   {process?.points.map((point, index) => (
                     <li key={index} className="text-sm text-[#FFFFFF80] mt-1">

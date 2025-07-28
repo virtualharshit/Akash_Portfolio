@@ -92,7 +92,7 @@ const Navbar = () => {
                   pathname === "/about" ? "underline font-bold" : ""
                 }`}
               >
-                About Us
+                About
               </Link>
               {/* <li className="relative" ref={dropdownRef}>
                 <button

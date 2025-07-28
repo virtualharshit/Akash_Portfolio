@@ -7,7 +7,7 @@ import Link from "next/link";
 const MultipleInfo = () => {
   const [active, setactive] = useState(0);
 
-  const sections = ["About", "Experience", "Education", "Skill"];
+  const sections = ["About"];
 
   const techStack = [
     { icon: <FaHtml5 className="text-orange-700" />, name: "HTML" },

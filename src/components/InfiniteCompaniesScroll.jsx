@@ -28,10 +28,10 @@ const InfiniteCompaniesScroll = () => {
                 key={`company-${index}`}
                 className="inline-flex items-center flex-shrink-0"
               >
-                <Image
+                <img
                   src={company}
                   alt="Company logo"
-                  className="h-8 md:h-10 w-auto object-contain"
+                  className="h-8 mx-4 md:h-10 w-auto object-contain"
                   loading="lazy"
                 />
               </div>

@@ -13,11 +13,21 @@ import LetsWorkTogether from "@/components/LetsWorkTogether";
 import Footer from "@/components/Footer";
 import InfiniteCompaniesScroll from "@/components/InfiniteCompaniesScroll";
 import Testimonials from "@/components/Testimonials";
+import Services from "@/components/Services";
 
 const caveat = Caveat({
   subsets: ["latin"],
   weight: ["400"], // or 500, 600, 700
 });
+
+const servicesimgs = [
+  "./services1.png",
+  "./services2.png",
+  "./services3.png",
+  "./services4.png",
+  "./services5.png",
+  "./services6.png",
+];
 
 const projects = [
   {
@@ -140,56 +150,17 @@ export default function Home() {
             </div>
           </ContentTransition>
 
-          <div className="w-[90%] m-auto relative grid md:grid-cols-2 xl:grid-cols-3 gap-6 py-12">
-            {Array(6)
-              .fill(null)
-              .map((_, index) => (
-                <div
-                  key={index}
-                  className="h-[300px] bg-[#D9D9D9] grid justify-center gap-4  border-b py-4 border-[#FFFFFF1A] hover:border-[#FF5E00]"
-                >
-                  <div className="text-xl">
-                    {(index + 1).toString().padStart(2, "0")}
-                  </div>
-                </div>
-              ))}
-          </div>
-
-          <div className="w-[90%] m-auto relative grid gap-8 mt-12">
-            {services.map((project, index) => (
-              <div
+          <div className="w-[90%] m-auto relative grid md:grid-cols-2 lg:grid-cols-3 gap-6 py-12">
+            {servicesimgs.map((img, index) => (
+              <img
                 key={index}
-                className="grid lg:grid-cols-[5%_40%_40%_10%] justify-center gap-4  border-b py-4 border-[#FFFFFF1A] hover:border-[#FF5E00]"
-              >
-                <div className="text-xl">
-                  {(index + 1).toString().padStart(2, "0")}
-                </div>
-                <div className="flex  justify-between gap-2">
-                  <div>
-                    <div className="text-sm">{project.category}</div>
-                    <div className="text-xl lg:text-3xl mt-2">
-                      {" "}
-                      {project.title}
-                    </div>
-                  </div>
-                  <div className="flex justify-end items-center lg:hidden">
-                    <MdArrowOutward className="bg-[#262625] text-white hover:bg-[#FF5E00] hover:text-black text-lg w-10 h-10 p-2 " />
-                  </div>
-                </div>
-
-                <div>
-                  <div className="text-sm ">{project.subtitle}</div>
-                  <div className="text-sm text-[#FFFFFF80] mt-2">
-                    {" "}
-                    {project.desc}
-                  </div>
-                </div>
-                <div className="hidden lg:flex justify-end items-center">
-                  <MdArrowOutward className="bg-[#262625] text-white hover:bg-[#FF5E00] hover:text-black text-lg w-10 h-10 p-2 " />
-                </div>
-              </div>
+                src={img}
+                className="w-full h-full max-h-[300px] object-cover overflow-hidden"
+              />
             ))}
           </div>
+
+          <Services />
         </section>
 
         <LetsWorkTogether />
