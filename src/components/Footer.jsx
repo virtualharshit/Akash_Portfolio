@@ -16,7 +16,7 @@ const Footer = () => {
             Drop me a message anytime — I&apos;m just one click away!
           </div>
           <div className="text-xl sm:text-2xl md:text-3xl underline mb-2">
-            Akashjanoriya77@gmail.com
+            akashjanoriya77@gmail.com
           </div>
           <div className="text-xl sm:text-2xl md:text-3xl underline">
             +91 88711 82688
@@ -25,7 +25,7 @@ const Footer = () => {
 
         {/* Social Links */}
         <div className="order-1 lg:order-2 grid grid-cols-2 grid-rows-2 gap-3 p-2 h-fit">
-          {["Facebook", "Instagram", "Dribble", "webflow"].map((platform) => (
+          {["Facebook", "Instagram", "Dribble", "LinkedIn"].map((platform) => (
             <div
               key={platform}
               className="bg-[#FF5D00] p-2 sm:p-3 flex items-center justify-between gap-2 rounded text-sm sm:text-base"

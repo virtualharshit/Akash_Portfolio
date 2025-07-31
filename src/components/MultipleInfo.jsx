@@ -90,7 +90,7 @@ const MultipleInfo = () => {
                             Email
                           </label>
                           <div id="email" className="mt-2">
-                            akash@technisum.com
+                            akashjanoriya77@gmail.com
                           </div>
                         </div>
                         <div className="bg-[#141410] p-4 text-left rounded-xl">
@@ -111,8 +111,16 @@ const MultipleInfo = () => {
                           >
                             Location
                           </label>
-                          <div id="email" className="mt-2">
-                            India
+                          <div
+                            id="email"
+                            className="mt-2 flex items-center gap-2"
+                          >
+                            India{" "}
+                            <img
+                              className="h-[30px] rounded"
+                              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7L25pqAuJCNl0_LuKt-AUvVqlR7x_QsejUA7QK_4nI0Yy7-dxw-lf2CvEBk3HeXm-mH8&usqp=CAU"
+                              alt=""
+                            />
                           </div>
                         </div>
                         <div className="bg-[#141410] p-4 text-left rounded-xl">
