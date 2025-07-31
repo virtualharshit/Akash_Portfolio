@@ -24,7 +24,7 @@ const LetsWorkTogether = () => {
   return (
     <div>
       <div className=" text-white bg-[#1C1C16]">
-        <div className="w-[90%]  m-auto container  mx-auto text-center flex flex-col items-center gap-12 py-8 px-6">
+        <div className="w-[90%]  m-auto container  mx-auto text-center flex flex-col items-center gap-12 py-8 lg:px-6">
           <div className=" m-auto rounded-xl">
             <ContentTransition
               type="fadeIn"
@@ -33,7 +33,7 @@ const LetsWorkTogether = () => {
             >
               <section className="grid lg:grid-cols-2 items-center gap-[5%] relative p-4 py-8 lg:p-8 ">
                 <ContentTransition
-                  type="rightToLeft"
+                  type="leftToRight"
                   duration={1.2}
                   delay={0.2}
                   viewport={{ once: true, margin: "-100px" }}
