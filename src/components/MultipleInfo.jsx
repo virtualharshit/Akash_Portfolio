@@ -16,9 +16,9 @@ const MultipleInfo = () => {
   return (
     <div id="about">
       <div className=" text-white ">
-        <div className="w-[90%] md:w-[80%]  m-auto container  mx-auto text-center flex flex-col items-center gap-12 py-16 px-6">
+        <div className="w-[90%] md:w-[80%]  m-auto container  mx-auto text-center flex flex-col items-center gap-12 py-16 lg:px-6">
           <FaStarOfLife className="text-3xl" />
-          <h2 className="md:text-3xl ">
+          <h2 className="lg:text-3xl ">
             I&apos;m a Creative Professional with a Passion htmlFor Design.
             Currently based in India, I collaborate with global clients to
             transhtmlForm ideas into powerful digital experiences. I specialize
