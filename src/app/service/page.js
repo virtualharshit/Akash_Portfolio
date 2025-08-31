@@ -141,10 +141,10 @@ export default function Home() {
                 <h2
                   className={` text-2xl  italic mx-4  whitespace-nowrap ${caveat.className}`}
                 >
-                  <a className="hover:underline" href="/">
+                  <Link className="hover:underline" href="/">
                     {" "}
                     Home{" "}
-                  </a>{" "}
+                  </Link>{" "}
                   <span className="text-orange-500"> / Services </span>
                 </h2>
               </div>
