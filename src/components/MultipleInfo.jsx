@@ -7,7 +7,7 @@ import Link from "next/link";
 const MultipleInfo = () => {
   const [active, setactive] = useState(0);
 
-  const sections = ["About"];
+  const sections = ["About", "Experience", "Skills"];
 
   const techStack = [
     { icon: <FaHtml5 className="text-orange-700" />, name: "HTML" },
@@ -16,18 +16,20 @@ const MultipleInfo = () => {
   return (
     <div id="about">
       <div className=" text-white ">
-        <div className="w-[90%] md:w-[80%]  m-auto container  mx-auto text-center flex flex-col items-center gap-12 py-16 lg:px-6">
-          <FaStarOfLife className="text-3xl" />
+        <div className="w-[90%] md:w-[80%]  m-auto container  mx-auto text-center flex flex-col items-center gap-12 py-[4rem] lg:px-6">
+          {/* <FaStarOfLife className="text-3xl" /> */}
           <h2 className="lg:text-3xl ">
-            I&apos;m a Creative Professional with a Passion htmlFor Design.
-            Currently based in India, I collaborate with global clients to
-            transhtmlForm ideas into powerful digital experiences. I specialize
-            in UI/UX Design, Graphic Design, Branding, and Full-Stack Web
-            Development. My focus is on building meaningful, user-centered
-            solutions that not only look great but also drive real results and
-            provide measurable value.
+            I am a passionate Creative Professional with a keen eye for design
+            and innovation. Operating remotely with a global client base, I
+            collaborate with organizations and brands worldwide to transform
+            ideas into impactful digital experiences. My expertise spans UI/UX
+            Design, Graphic Design, Branding, and Full-Stack Web Development. I
+            am dedicated to creating meaningful, user-centric solutions that not
+            only look exceptional but also deliver measurable results and real
+            value. My focus is on bridging creativity with strategy to help
+            brands achieve lasting success.
           </h2>
-          <div className="flex justify-center flex-wrap gap-2 mb-8">
+          {/* <div className="flex justify-center flex-wrap gap-2 mb-8">
             {sections.map((section, index) => (
               <div
                 key={index}
@@ -39,7 +41,7 @@ const MultipleInfo = () => {
                 {section}
               </div>
             ))}
-          </div>
+          </div> */}
 
           <div className="relative flex">
             {/* <div className="absolute left-[50%] -translate-x-1/2 w-[calc(100%-150px)] h-1 bg-white border-2 border-white"></div> */}
@@ -89,9 +91,13 @@ const MultipleInfo = () => {
                           >
                             Email
                           </label>
-                          <div id="email" className="mt-2">
+                          <a
+                            id="email"
+                            className="mt-2 block"
+                            href="mailto:akashjanoriya77@gmail.com"
+                          >
                             akashjanoriya77@gmail.com
-                          </div>
+                          </a>
                         </div>
                         <div className="bg-[#141410] p-4 text-left rounded-xl">
                           <label

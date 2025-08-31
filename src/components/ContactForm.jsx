@@ -1,196 +1,168 @@
 "use client";
 
-import { useState } from "react";
+import React, { useState } from "react";
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    phone: "",
+    contact: "",
     message: "",
   });
-
-  const [submitted, setSubmitted] = useState(false);
-  const [error, setError] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState(null);
+
+  // Google Form Field IDs (replace with your actual IDs)
+  const FIELD_IDS = {
+    name: "entry.1205332458",
+    email: "entry.1768062433", // Find in your form's HTML
+    contact: "entry.1574097731", // Find in your form's HTML
+    message: "entry.371500695",
+  };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
-  };
-
-  const submitToGoogleForms = async (data) => {
-    const formUrl =
-      "https://docs.google.com/forms/d/e/1FAIpQLSe0bOrvgadFNu9w7lftnmaMm94nZ6yygQMZ8GkJIt4X8qTrCA/formResponse";
-
-    const formPayload = new URLSearchParams();
-    formPayload.append("entry.2005620554", data.name); // Name field
-    formPayload.append("entry.1045781291", data.email); // Email field
-    formPayload.append("entry.1065046570", data.phone); // Phone field
-    formPayload.append("entry.839337160", data.message); // Message field
-
-    try {
-      await fetch(formUrl, {
-        method: "POST",
-        body: formPayload,
-        mode: "no-cors",
-        headers: {
-          "Content-Type": "application/x-www-form-urlencoded",
-        },
-      });
-      return true;
-    } catch (error) {
-      console.error("Form submission error:", error);
-      return false;
-    }
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setError("");
     setIsSubmitting(true);
+    setSubmitStatus(null);
 
-    // Validation
-    if (!formData.name.trim()) {
-      setError("Please enter your name");
+    const formUrl = `https://docs.google.com/forms/d/e/1FAIpQLSftE-6UMyU7T7HzufmIyjaRd4QD9S4YkWA4K0WIdLwm9oukAg/formResponse?usp=pp_url&${
+      FIELD_IDS.name
+    }=${encodeURIComponent(formData.name)}&${
+      FIELD_IDS.email
+    }=${encodeURIComponent(formData.email)}&${
+      FIELD_IDS.contact
+    }=${encodeURIComponent(formData.contact)}&${
+      FIELD_IDS.message
+    }=${encodeURIComponent(formData.message)}`;
+
+    try {
+      await fetch(formUrl, { method: "POST", mode: "no-cors" });
+      setSubmitStatus("success");
+      setFormData({ name: "", email: "", contact: "", message: "" });
+    } catch (error) {
+      setSubmitStatus("error");
+      console.error("Submission error:", error);
+    } finally {
       setIsSubmitting(false);
-      return;
-    }
-
-    if (!formData.email.trim() || !formData.email.includes("@")) {
-      setError("Please enter a valid email address");
-      setIsSubmitting(false);
-      return;
-    }
-
-    if (!formData.message.trim()) {
-      setError("Please enter your message");
-      setIsSubmitting(false);
-      return;
-    }
-
-    const success = await submitToGoogleForms(formData);
-    setIsSubmitting(false);
-
-    if (success) {
-      setSubmitted(true);
-      setFormData({ name: "", email: "", phone: "", message: "" });
-    } else {
-      setError("Failed to submit form. Please try again later.");
     }
   };
 
-  if (submitted) {
-    return (
-      <div className="max-w-md mx-auto p-6 bg-white rounded-lg shadow-md text-center">
-        <h2 className="text-2xl font-bold text-green-600 mb-4">Thank You!</h2>
-        <p className="text-gray-700">
-          Your message has been submitted successfully.
-        </p>
-        <button
-          onClick={() => setSubmitted(false)}
-          className="mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition"
-        >
-          Submit Another Message
-        </button>
-      </div>
-    );
-  }
-
   return (
-    <div className="max-w-md mx-auto p-6 bg-white rounded-lg shadow-md">
-      <h2 className="text-2xl font-bold text-gray-800 mb-6">Contact Us</h2>
+    <section className="px-4 py-12 md:py-24 lg:px-8">
+      <div className="max-w-4xl mx-auto flex flex-col items-center gap-4 text-center mb-12">
+        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold">
+          Let&apos;s Start Something
+        </h2>
+      </div>
 
-      {error && (
-        <div className="mb-4 p-3 bg-red-100 text-red-700 rounded">{error}</div>
-      )}
-
-      <form onSubmit={handleSubmit} className="space-y-4">
-        <div>
-          <label
-            htmlFor="name"
-            className="block text-sm font-medium text-gray-700 mb-1"
-          >
-            Name *
-          </label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-            required
-          />
+      <div className="bg-white text-black max-w-6xl mx-auto p-6 md:p-8 rounded-2xl flex flex-col gap-6">
+        <div className="font-bold text-xl md:text-2xl border-b border-[#00000033] py-4">
+          GET IN TOUCH
         </div>
 
-        <div>
-          <label
-            htmlFor="email"
-            className="block text-sm font-medium text-gray-700 mb-1"
-          >
-            Email *
-          </label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-            required
-          />
-        </div>
-
-        <div>
-          <label
-            htmlFor="phone"
-            className="block text-sm font-medium text-gray-700 mb-1"
-          >
-            Phone Number
-          </label>
-          <input
-            type="tel"
-            id="phone"
-            name="phone"
-            value={formData.phone}
-            onChange={handleChange}
-            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
-        </div>
-
-        <div>
-          <label
-            htmlFor="message"
-            className="block text-sm font-medium text-gray-700 mb-1"
-          >
-            Message *
-          </label>
-          <textarea
-            id="message"
-            name="message"
-            value={formData.message}
-            onChange={handleChange}
-            rows={5}
-            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-            required
-          />
-        </div>
-
-        <button
-          type="submit"
-          disabled={isSubmitting}
-          className={`w-full py-2 px-4 bg-blue-500 text-white font-medium rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition ${
-            isSubmitting ? "opacity-70 cursor-not-allowed" : ""
-          }`}
+        <form
+          onSubmit={handleSubmit}
+          className="grid grid-cols-1 md:grid-cols-2 gap-6"
         >
-          {isSubmitting ? "Submitting..." : "Submit"}
-        </button>
-      </form>
-    </div>
+          {/* Name */}
+          <div className="flex flex-col gap-2">
+            <label htmlFor="name" className="text-sm font-medium">
+              Your Name
+            </label>
+            <input
+              id="name"
+              name="name"
+              type="text"
+              placeholder="Enter Name"
+              className="bg-[#EDEDED] p-3 md:p-4 rounded focus:ring-2 focus:ring-black focus:border-transparent"
+              value={formData.name}
+              onChange={handleChange}
+              required
+            />
+          </div>
+
+          {/* Email */}
+          <div className="flex flex-col gap-2">
+            <label htmlFor="email" className="text-sm font-medium">
+              Your Email
+            </label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              placeholder="Enter Email"
+              className="bg-[#EDEDED] p-3 md:p-4 rounded focus:ring-2 focus:ring-black focus:border-transparent"
+              value={formData.email}
+              onChange={handleChange}
+              required
+            />
+          </div>
+
+          {/* Contact */}
+          <div className="flex flex-col gap-2">
+            <label htmlFor="contact" className="text-sm font-medium">
+              Your Contact
+            </label>
+            <input
+              id="contact"
+              name="contact"
+              type="tel"
+              placeholder="Enter Contact Number"
+              className="bg-[#EDEDED] p-3 md:p-4 rounded focus:ring-2 focus:ring-black focus:border-transparent"
+              value={formData.contact}
+              onChange={handleChange}
+              required
+            />
+          </div>
+
+          {/* Message (full width) */}
+          <div className="md:col-span-2 flex flex-col gap-2">
+            <label htmlFor="message" className="text-sm font-medium">
+              Anything you&apos;d like to mention before we give you a call?
+            </label>
+            <textarea
+              id="message"
+              name="message"
+              rows={5}
+              placeholder="Enter your message"
+              className="bg-[#EDEDED] p-3 md:p-4 rounded focus:ring-2 focus:ring-black focus:border-transparent"
+              value={formData.message}
+              onChange={handleChange}
+              required
+            />
+          </div>
+
+          {/* Submit Button and Status */}
+          <div className="md:col-span-2 flex flex-col items-end gap-2">
+            {submitStatus === "success" && (
+              <p className="text-green-600 ">
+                Thank you! We&apos;ll contact you soon.
+              </p>
+            )}
+            {submitStatus === "error" && (
+              <p className="text-red-600">
+                Submission failed. Please try again.
+              </p>
+            )}
+
+            <button
+              type="submit"
+              disabled={isSubmitting}
+              className={`w-full cursor-pointer md:w-auto bg-black text-white py-3 px-8 rounded-lg text-lg md:text-xl hover:bg-gray-800 transition-colors ${
+                isSubmitting ? "opacity-70 cursor-not-allowed" : ""
+              }`}
+            >
+              {isSubmitting ? "Sending..." : "Let's Contact"}
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
   );
 };
 

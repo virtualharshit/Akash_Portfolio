@@ -19,6 +19,7 @@ import { FaFacebook } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import ScrollToTopButton from "@/components/ScrollToTopButton";
 import Services from "@/components/Services";
+import WorkingProcess from "@/components/WorkingProcess";
 
 const caveat = Caveat({
   subsets: ["latin"],
@@ -28,36 +29,42 @@ const caveat = Caveat({
 const projects = [
   [
     {
-      title: "Brand Identity & Motion Design",
-      category: "Product Design",
+      title: "Smooth UI with animation",
+      category: "Developer tool interface design",
       image: "./portfolio1.png",
+      url: "https://www.behance.net/gallery/233231139/UIUX-Designs",
     },
     {
-      title: "Brand Identity & Motion Design",
+      title: "Trendy, Bold, Fashion Forward",
+      category: "Streetwear Branding Visual identity ",
       image: "./portfolio2.png",
-      category: "Product Design",
+      url: "https://www.behance.net/gallery/233222815/BOLD-Capital",
     },
     {
-      title: "Brand Identity & Motion Design",
       image: "./portfolio3.png",
-      category: "Product Design",
+      title: "Minimal, clean, User Focused",
+      category: "Finance App UI Design",
+      url: "https://www.behance.net/gallery/233059739/Mniami-Food-Delivery-App",
     },
   ],
   [
     {
-      title: "Brand Identity & Motion Design",
-      category: "Product Design",
       image: "./portfolio4.png",
+      title: "Smart UX, Sleek interface",
+      category: "AI Browsing app design",
+      url: "https://www.behance.net/gallery/233059739/Mniami-Food-Delivery-App",
     },
     {
-      title: "Brand Identity & Motion Design",
+      title: "Modern Layout with Motion",
+      category: "Crypto Dashboard UI Design",
       image: "./portfolio5.png",
-      category: "Product Design",
+      url: "https://www.behance.net/gallery/233231139/UIUX-Designs",
     },
     {
-      title: "Brand Identity & Motion Design",
+      title: "Graphs, Charts, Smart Layout",
       image: "./portfolio6.png",
-      category: "Product Design",
+      category: "Data Dashboard UI Design",
+      url: "https://www.behance.net/gallery/233222815/BOLD-Capital",
     },
   ],
 ];
@@ -79,7 +86,7 @@ const services = [
   },
   {
     title: "Web Design & Development",
-    category: "Design",
+    category: "Web",
     subtitle:
       "Fully Responsive and High-Performing Websites Built with Modern Tech",
     desc: " From landing pages to full-scale web platforms, I develop websites that are fast, secure, mobile-friendly, and tailored to meet your business objectives using the latest technologies.",
@@ -176,7 +183,7 @@ export default function Home() {
               <p className="text-center md:text-left">
                 I craft user-focused digital experiences through clean code and
                 captivating design. Let&apos;s build your brand, website, or
-                mobile app — professionally and passionately.
+                mobile app professionally and passionately.
               </p>
 
               <ContentTransition
@@ -227,7 +234,7 @@ export default function Home() {
                 <div className="w-12 h-px bg-orange-500" />
               </div>
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold">
-                Look At My Portfolio And Give Me Your Feedback
+                My Portfolio
               </h2>
               <p className="text-sm sm:text-base">
                  Here are a few selected works that reflect my expertise in
@@ -240,9 +247,11 @@ export default function Home() {
             {projects.map((projectarr, index) => (
               <div className="flex flex-col justify-center gap-8" key={index}>
                 {projectarr.map((project, index1) => (
-                  <div
+                  <a
+                    target="_blank"
+                    href={project.url}
                     key={index1}
-                    className="flex flex-col justify-center gap-2 "
+                    className="flex flex-col justify-center gap-2 cursor-pointer hover:scale-[1.02] transition-transform"
                   >
                     <img
                       src={project.image}
@@ -253,19 +262,23 @@ export default function Home() {
                       {project.category}
                     </div>
                     <div className="text-xl"> {project.title}</div>
-                  </div>
+                  </a>
                 ))}
               </div>
             ))}
           </div>
 
-          <div className="mt-8 relative flex flex-col items-center justify-center gap-4 w-[200px] h-[200px] rounded-full text-md text-black m-auto bg-[#FF5E00]">
-            <div className="w-full h-full absolute border-2 border-[#FF5E00] rounded-full top-2 left-[-5%]">
+          <a
+            href="https://www.behance.net/akashjanoriya"
+            target="_blank"
+            className="mt-8 relative flex flex-col items-center justify-center gap-4 w-[200px] h-[200px] rounded-full text-md  text-black m-auto bg-[#FF5E00] cursor-pointer hover:scale-[1.02] transition-transform"
+          >
+            <div className="w-full h-full absolute border-2 border-[#FF5E00] rounded-full top-2 left-[-5%] hover:scale-[1.02] ">
               {" "}
             </div>
             <FaArrowRight />
             <div className=""> Click More Work</div>
-          </div>
+          </a>
         </section>
 
         <LetsWorkTogether />
@@ -288,7 +301,7 @@ export default function Home() {
                 <div className="w-12 h-px bg-orange-500" />
               </div>
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-8">
-                My Special Service For Your Business Development
+                Elevate Your Business With Web Solutions
               </h2>
             </div>
           </ContentTransition>
@@ -296,49 +309,7 @@ export default function Home() {
           <Services />
         </section>
 
-        {/* Working Process Showcase */}
-        <section className="p-8 py-[6rem] mt-6 bg-[#1C1C16]">
-          <ContentTransition
-            type="fadeInScale"
-            duration={1.5}
-            viewport={{ once: true, margin: "-100px" }}
-          >
-            <div className="lg:w-1/2 m-auto flex flex-col items-center gap-2 text-center">
-              <div className="flex items-center justify-center my-8">
-                <div className="w-12 h-px bg-orange-500" />
-                <h2
-                  className={`text-orange-500 text-2xl  italic mx-4  whitespace-nowrap ${caveat.className}`}
-                >
-                  Working Process
-                </h2>
-                <div className="w-12 h-px bg-orange-500" />
-              </div>
-              <h2 className="text-xl sm:text-3xl md:text-4xl font-bold mb-8">
-                Ready to bring your online vision to life? Here&apos;s how we
-                design and build websites that truly stand out:
-              </h2>
-            </div>
-          </ContentTransition>
-
-          <div className="lg:w-[90%] xl:w-[70%] m-auto relative grid lg:grid-cols-3  gap-8 mt-12">
-            {processes.map((process, index) => (
-              <div
-                key={index}
-                className=" border p-6 py-8 rounded-xl border-[#FFFFFF1A] hover:border-[#FF5E00]"
-              >
-                <div className="text-xl lg:text-3xl">{process.title}</div>
-
-                <ul className="list-disc pl-5 mt-2">
-                  {process?.points.map((point, index) => (
-                    <li key={index} className="text-sm text-[#FFFFFF80] mt-1">
-                      {point}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-        </section>
+        <WorkingProcess />
 
         <Testimonials />
       </main>

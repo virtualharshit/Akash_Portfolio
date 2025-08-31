@@ -14,8 +14,8 @@ const Services = () => {
       title: "Graphic & Illustration Design ",
       category: "Design",
       subtitle: "Creative Graphics and Illustrations That Speak for Your Brand",
-      desc: " I craft visually compelling designs tailored to communicate your brand story effectively. From custom illustrations to striking marketing materials, I ensure every graphic leaves a lasting impression.",
-      url: "",
+      desc: "I craft visually compelling designs tailored to communicate your brand story effectively. From custom illustrations to striking marketing materials, I ensure every graphic leaves a lasting impression.",
+      url: "https://www.behance.net/gallery/233231139/UIUX-Designs",
     },
     {
       title: "UI/UX Design",
@@ -23,21 +23,22 @@ const Services = () => {
       subtitle: "Intuitive and Engaging Interfaces for Web and Mobile Apps",
       desc: "User experience is at the heart of every digital product. I design clean, user-friendly interfaces that keep your audience engaged and make your product easy to navigate and enjoyable to use.",
       url: "",
+      url: "https://www.behance.net/gallery/233231139/UIUX-Designs",
     },
     {
       title: "Web Design & Development",
-      category: "Design",
+      category: "Web",
       subtitle:
         "Fully Responsive and High-Performing Websites Built with Modern Tech",
       desc: " From landing pages to full-scale web platforms, I develop websites that are fast, secure, mobile-friendly, and tailored to meet your business objectives using the latest technologies.",
-      url: "",
+      url: "https://www.behance.net/gallery/233222815/BOLD-Capital",
     },
     {
       title: "Mobile App Design",
-      category: "Design",
+      category: "App",
       subtitle: "Pixel-Perfect and User-Friendly App Interfaces",
       desc: "I design mobile applications that are intuitive, consistent, and tailored for both iOS and Android platforms — ensuring your app not only looks great but functions flawlessly.",
-      url: "",
+      url: "https://www.behance.net/gallery/233059739/Mniami-Food-Delivery-App",
     },
   ];
 
@@ -65,9 +66,13 @@ const Services = () => {
             <div className="text-sm ">{project.subtitle}</div>
             <div className="text-sm text-[#FFFFFF80] mt-2"> {project.desc}</div>
           </div>
-          <div className="hidden lg:flex justify-end items-center">
+          <a
+            href={project.url}
+            target="_blank"
+            className="hidden lg:flex justify-end items-center"
+          >
             <MdArrowOutward className="bg-[#262625] text-white hover:bg-[#FF5E00] hover:text-black text-lg w-10 h-10 p-2 " />
-          </div>
+          </a>
         </div>
       ))}
     </div>

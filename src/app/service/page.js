@@ -14,6 +14,7 @@ import Footer from "@/components/Footer";
 import InfiniteCompaniesScroll from "@/components/InfiniteCompaniesScroll";
 import Testimonials from "@/components/Testimonials";
 import Services from "@/components/Services";
+import WorkingProcess from "@/components/WorkingProcess";
 
 const caveat = Caveat({
   subsets: ["latin"],
@@ -21,12 +22,12 @@ const caveat = Caveat({
 });
 
 const servicesimgs = [
-  "./services1.png",
-  "./services2.png",
-  "./services3.png",
-  "./services4.png",
-  "./services5.png",
+  "./service1.png",
+  "./service6.png",
+  "./service2.png",
+  "./service5.png",
   "./services6.png",
+  "./portfolio1.png",
 ];
 
 const projects = [
@@ -95,34 +96,30 @@ const services = [
 
 const processes = [
   {
-    title: "Concept",
-    desc: "Nemo enim ipsam voluptatem voluptas sit aspernatur aut odit aut fugit",
+    title: "Discovery & Strategic Blueprint",
     points: [
-      "Reviewing any existing branding",
-      "Target audience and competitors research",
-      "Developing a strategy",
+      "Uncover your unique business goals.",
+      "Pinpoint your perfect audience.",
+      "Map out your website's success.",
     ],
   },
   {
-    title: "Concept",
-    desc: "Nemo enim ipsam voluptatem voluptas sit aspernatur aut odit aut fugit",
+    title: "Design & Develop Your Vision",
     points: [
-      "Reviewing any existing branding",
-      "Target audience and competitors research",
-      "Developing a strategy",
+      "Craft captivating visual mockups.",
+      "Build intuitive, responsive layouts.",
+      "Integrate powerful features.",
     ],
   },
   {
-    title: "Concept",
-    desc: "Nemo enim ipsam voluptatem voluptas sit aspernatur aut odit aut fugit",
+    title: "Refine & Launch Your Online Presence",
     points: [
-      "Reviewing any existing branding",
-      "Target audience and competitors research",
-      "Developing a strategy",
+      "Your valuable feedback is key.",
+      "Perfect with unlimited revisions.",
+      "Launch your stunning website!",
     ],
   },
 ];
-
 export default function Home() {
   return (
     <div className="min-h-screen bg-[#141410]font-[family-name:var(--font-geist-sans)]">
@@ -138,13 +135,17 @@ export default function Home() {
           >
             <div className="lg:w-1/2 m-auto flex flex-col items-center gap-2 text-center">
               <h2 className="text-2xl sm:text-3xl md:text-7xl font-bold mb-8">
-                Services All
+                All Services
               </h2>
               <div className="flex items-center justify-center my-8">
                 <h2
                   className={` text-2xl  italic mx-4  whitespace-nowrap ${caveat.className}`}
                 >
-                  Home <span className="text-orange-500"> / Service All </span>
+                  <a className="hover:underline" href="/">
+                    {" "}
+                    Home{" "}
+                  </a>{" "}
+                  <span className="text-orange-500"> / Services </span>
                 </h2>
               </div>
             </div>
@@ -165,51 +166,7 @@ export default function Home() {
 
         <LetsWorkTogether />
 
-        {/* Working Process Showcase */}
-        <section className="p-8 py-[6rem] mt-8 bg-[#1C1C16]">
-          <ContentTransition
-            type="fadeInScale"
-            duration={1.5}
-            viewport={{ once: true, margin: "-100px" }}
-          >
-            <div className="lg:w-1/2 m-auto flex flex-col items-center gap-2 text-center">
-              <div className="flex items-center justify-center my-8">
-                <div className="w-12 h-px bg-orange-500" />
-                <h2
-                  className={`text-orange-500 text-2xl  italic mx-4  whitespace-nowrap ${caveat.className}`}
-                >
-                  Working Process
-                </h2>
-                <div className="w-12 h-px bg-orange-500" />
-              </div>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-8">
-                Your Dream Website In Just Few Steps
-              </h2>
-            </div>
-          </ContentTransition>
-
-          <div className="lg:w-[90%] xl:w-[70%] m-auto relative grid lg:grid-cols-3  gap-8 mt-12">
-            {processes.map((process, index) => (
-              <div
-                key={index}
-                className=" border p-6 py-8 rounded-xl border-[#FFFFFF1A] hover:border-[#FF5E00]"
-              >
-                <div className="text-3xl">{process.title}</div>
-                <div className="text-sm text-[#FFFFFF80] mt-4">
-                  {" "}
-                  {process.desc}
-                </div>
-                <ul className="list-disc pl-5 mt-2">
-                  {process?.points.map((point, index) => (
-                    <li key={index} className="text-sm text-[#FFFFFF80] mt-1">
-                      {point}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-        </section>
+        <WorkingProcess />
 
         <Testimonials />
       </main>

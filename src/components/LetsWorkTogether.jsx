@@ -54,8 +54,8 @@ const LetsWorkTogether = () => {
                     <p className="text-center lg:text-left text-base text-[#FFFFFF80]">
                       Bring your ideas to life with expert design, development,
                       and branding. Whether you need a website, mobile app, or a
-                      brand identity — I’m here to collaborate and deliver
-                      results that matter.
+                      brand identity I’m here to collaborate and deliver results
+                      that matter.
                     </p>
                     <div className="mt-6 flex flex-col border-t border-[#FF5E00]  gap-4  wrap-break-word">
                       <div className=" flex gap-4 items-center border-b border-[#FFFFFF1A]  p-4 pr-20 text-left ">
@@ -69,9 +69,12 @@ const LetsWorkTogether = () => {
                           >
                             Email
                           </label>
-                          <div id="email" className="mt-1">
-                            Akash@technisum.com
-                          </div>
+                          <a
+                            href="mailto:akashjanoriya77@gmail.com"
+                            className="mt-1 block"
+                          >
+                            akashjanoriya77@gmail.com
+                          </a>
                         </div>
                       </div>
                       <div className=" flex gap-4 items-center border-b border-[#FFFFFF1A]  p-4 pr-20 text-left ">

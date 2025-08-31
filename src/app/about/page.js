@@ -24,16 +24,16 @@ const caveat = Caveat({
 
 const members = [
   {
-    image: "./about1.png",
+    image: "./about5.png",
   },
   {
-    image: "./about2.png",
+    image: "./about6.jpg",
   },
   {
-    image: "./about3.png",
+    image: "./about7.jpg",
   },
   {
-    image: "./about4.png",
+    image: "./about8.jpg",
   },
 ];
 
@@ -208,11 +208,7 @@ export default function Home() {
 
           <div className="lg:min-h-[80vh] grid lg:grid-cols-2 items-center w-[90%] xl:w-[80%] mx-auto relative py-8">
             {/* Left content */}
-            <ContentTransition
-              type="leftToRight"
-              duration={0.8}
-              className="w-[90%] m-auto lg:w-auto flex flex-col justify-center items-center lg:items-start text-sm lg:text-base"
-            >
+            <div className="w-[90%] m-auto lg:w-auto flex flex-col justify-center items-center lg:items-start text-sm lg:text-base">
               <h2 className="text-center lg:text-left text-2xl sm:text-3xl xl:text-5xl font-bold mb-4">
                 Creative Director
               </h2>
@@ -240,7 +236,7 @@ export default function Home() {
                 and Adobe XD, I ensure your brand stands out with impactful
                 logos, brochures, and other essential graphics.
               </p>
-            </ContentTransition>
+            </div>
 
             {/* Right image */}
             <ContentTransition type="fadeIn" duration={1} delay={0.3}>
@@ -297,8 +293,7 @@ export default function Home() {
             </ContentTransition>
 
             <div className="w-full p-4 md:p-6 text-lg font-bold">
-              My clients typically come to me with specific challenges that are
-              holding back their digital growth:
+              Is Your Website Stuck? Here are Common Client Problems:
             </div>
 
             <div className=" relative grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
@@ -390,7 +385,7 @@ export default function Home() {
                   >
                     <div className="hidden lg:flex lg:justify-center items-center mt-6 lg:mt-0">
                       <img
-                        src="./about_expertise.png"
+                        src="./about8.jpg"
                         className="h-auto max-h-[200px] sm:max-h-[250px] md:max-h-[300px] lg:h-auto lg:max-h-none p-4 md:p-8 rounded-3xl overflow-hidden w-full object-contain"
                         alt="Expertise illustration"
                       />
@@ -419,13 +414,13 @@ export default function Home() {
                   >
                     <div className="hidden lg:flex flex-col justify-center items-center gap-4 md:gap-6 order-1 lg:order-none">
                       <img
-                        src="./about_technical1.png"
-                        className="h-auto max-h-[180px] sm:max-h-[220px] md:max-h-[350px] lg:h-auto w-full object-contain p-1 md:p-2 rounded-3xl"
+                        src="./portfolio3.png"
+                        className="h-auto  max-h-[180px] sm:max-h-[220px] md:max-h-[350px] lg:h-auto w-full object-cover p-1 md:p-2 rounded-4xl"
                         alt="Technical skills illustration"
                       />
                       <img
-                        src="./about_technical1.png"
-                        className="h-auto max-h-[180px] sm:max-h-[220px] md:max-h-[350px] lg:h-auto w-full object-contain p-1 md:p-2 rounded-3xl"
+                        src="./portfolio6.png"
+                        className="h-auto max-h-[180px] sm:max-h-[220px] md:max-h-[350px] lg:h-auto w-full object-cover p-1 md:p-2 rounded-3xl"
                         alt="Technical skills illustration"
                       />
                     </div>

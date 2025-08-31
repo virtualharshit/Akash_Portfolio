@@ -2,6 +2,25 @@ import React from "react";
 import { FaArrowRight } from "react-icons/fa";
 
 const Footer = () => {
+  const socials = [
+    {
+      name: "Facebook",
+      url: "https://www.facebook.com/ajanoriya",
+    },
+    {
+      name: "Instagram",
+      url: "https://www.instagram.com/akash_janoriya",
+    },
+    {
+      name: "Behance",
+      url: "https://www.behance.net/akashjanoriya",
+    },
+    {
+      name: "LinkedIn",
+      url: "https://www.linkedin.com/in/akash-janoriya77/",
+    },
+  ];
+
   return (
     <div className="w-full px-4 sm:px-6 md:w-[90%] lg:w-[80%] m-auto">
       {/* Hero Section */}
@@ -15,9 +34,12 @@ const Footer = () => {
           <div className="text-base sm:text-lg md:text-xl mb-4 w-full xl:w-[70%]">
             Drop me a message anytime — I&apos;m just one click away!
           </div>
-          <div className="text-xl sm:text-2xl md:text-3xl underline mb-2">
+          <a
+            href="mailto:akashjanoriya77@gmail.com"
+            className="text-xl sm:text-2xl md:text-3xl underline mb-2"
+          >
             akashjanoriya77@gmail.com
-          </div>
+          </a>
           <div className="text-xl sm:text-2xl md:text-3xl underline">
             +91 88711 82688
           </div>
@@ -25,13 +47,15 @@ const Footer = () => {
 
         {/* Social Links */}
         <div className="order-1 lg:order-2 grid grid-cols-2 grid-rows-2 gap-3 p-2 h-fit">
-          {["Facebook", "Instagram", "Dribble", "LinkedIn"].map((platform) => (
-            <div
-              key={platform}
-              className="bg-[#FF5D00] p-2 sm:p-3 flex items-center justify-between gap-2 rounded text-sm sm:text-base"
+          {socials.map((platform, i) => (
+            <a
+              href={platform.url}
+              target="_blank"
+              key={i}
+              className="bg-[#FF5D00] hover:scale-105  p-2 sm:p-3 flex items-center justify-between gap-2 rounded text-sm sm:text-base"
             >
-              {platform} <FaArrowRight className="text-xs sm:text-sm" />
-            </div>
+              {platform.name} <FaArrowRight className="text-xs sm:text-sm" />
+            </a>
           ))}
         </div>
       </div>
