@@ -58,7 +58,7 @@ const careerTestimonials = [
     designation: "VP of Product, DataFlow SaaS",
     comment:
       "Akash redesigned our B2B dashboard in 6 weeks – our power users now complete tasks 47% faster. He doesn’t just ‘make it pretty’ – he engineers revenue.",
-    image: "./testmonial1.png",
+    image: "./testmonial1.svg",
     points: 5,
   },
   {
@@ -66,7 +66,7 @@ const careerTestimonials = [
     designation: "CEO, LuxeCart Collective",
     comment:
       "After 3 failed redesigns, Akash found UX flaws costing us $18K/month. His checkout flow slashed cart abandonment by 61% – pure profit.",
-    image: "./testmonial2.png",
+    image: "./testmonial2.svg",
     points: 5,
   },
   {
@@ -74,7 +74,7 @@ const careerTestimonials = [
     designation: "CTO, VitalCare HealthTech",
     comment:
       "Akash made our app usable for seniors – 83% retention rate in 65+ users. His accessibility-first approach isn’t ethical – it’s smart business.",
-    image: "./testmonial3.png",
+    image: "./testmonial3.svg",
     points: 5,
   },
   {
@@ -82,7 +82,7 @@ const careerTestimonials = [
     designation: "Founder & CEO, NeoLogix AI",
     comment:
       "Akash delivered a pitch-ready prototype in 5 days that secured our $500K seed round. Investors called it ‘the most user-obsessed UX we’ve seen.",
-    image: "./testmonial4.png",
+    image: "./testmonial4.svg",
     points: 5,
   },
   {
@@ -90,7 +90,7 @@ const careerTestimonials = [
     designation: "Head of CX, SwiftCapital FinTech",
     comment:
       "He transformed our 5-star rating from 3.2 to 4.8 in 90 days. How? By cutting support tickets by 72% with intuitive UI patterns. ROI: 4x.",
-    image: "./testmonial5.png",
+    image: "./testmonial5.svg",
     points: 5,
   },
 ];

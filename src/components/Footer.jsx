@@ -13,7 +13,7 @@ const Footer = () => {
     },
     {
       name: "Behance",
-      url: "https://www.behance.net/akashjanoriya",
+      url: "https://www.behance.net/akashjanoriya88",
     },
     {
       name: "LinkedIn",

@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { FaArrowRightLong } from "react-icons/fa6";
+import { FaArrowRightLong, FaPhoneVolume } from "react-icons/fa6";
 
 const Navbar = () => {
   const [dropdownVisible, setDropdownVisible] = useState(false);
@@ -116,12 +116,13 @@ const Navbar = () => {
             </li>
             <li>
               <a
-                href="/contact"
+                target="_blank"
+                href="https://calendly.com/akashjanoriya77/1-1-discovery-call?month=2026-04"
                 className={`flex items-center gap-2 py-2 px-6 text-sm text-white rounded bg-[#FF5E00] hover:text-black hover:bg-gray-300 hover:scale-105 mx-2 ${
                   pathname === "/contact" ? "underline font-bold" : ""
                 }`}
               >
-                Let&apos;s Talk <FaArrowRightLong />
+                <FaPhoneVolume /> Book a call
               </a>
             </li>
           </ul>

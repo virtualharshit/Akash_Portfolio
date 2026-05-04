@@ -269,7 +269,7 @@ export default function Home() {
           </div>
 
           <a
-            href="https://www.behance.net/akashjanoriya"
+            href="https://www.behance.net/akashjanoriya88"
             target="_blank"
             className="mt-8 relative flex flex-col items-center justify-center gap-4 w-[200px] h-[200px] rounded-full text-md  text-black m-auto bg-[#FF5E00] cursor-pointer hover:scale-[1.02] transition-transform"
           >
